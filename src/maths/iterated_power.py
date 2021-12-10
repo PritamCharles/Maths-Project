@@ -1,5 +1,5 @@
 import numpy as np
-import src.utils as utils
+
 
 class IteratedPower:
     def __init__(self, A, itermax, epsilon):
@@ -37,7 +37,7 @@ class IteratedPower:
 
 
 A = np.array([[3, 1, 1], [1, 3, 1], [1, 1, 3]])
-#A = np.array([[3, 0, 1], [0, 7, 0], [1, 0, 3]])
+# A = np.array([[3, 0, 1], [0, 7, 0], [1, 0, 3]])
 x = np.array([[1], [1], [1]])
 test = IteratedPower(A, itermax=100, epsilon=10 ** (-17))
 test.iterated_power_method()
