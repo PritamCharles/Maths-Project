@@ -41,7 +41,7 @@ class InversedPowerWindow:
         frame1.place(x=self.win.size(root)[1] / 140, y=self.win.size(root)[0] / 14)
 
     def show_matrix(self, root):
-        frame2 = tk.Frame(root, bg="#2F2F40")
+        frame2 = tk.Frame(root, bg="#2F2F40", bd=4, relief="groove")
         tk.Label(frame2, text="Matrice d'étude", font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=1, column=1, pady=10)
 
         if self.combo2_value == "Personnalisée":
@@ -52,17 +52,17 @@ class InversedPowerWindow:
             for i in range(len(self.array_value)):
                 if self.array_size_value == 3:
                     tk.Label(frame2, text=str(self.array_value[i]), font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=i + 2, column=1)
-                if (self.array_size_value >= 4) and (self.array_size_value <= 8):
+                if (self.array_size_value >= 4) and (self.array_size_value < 7):
                     tk.Label(frame2, text=str(self.array_value[i]), font=("Comic Sans MS", 8), bg="#2F2F40", fg="white").grid(row=i + 2, column=1)
 
-            if self.array_size_value > 8:
+            if self.array_size_value >= 7:
                 tk.Label(frame2, text="(Trop grande pour être affichée)", font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=2, column=1)
                 print("Matrice d'étude:", self.array_value)
 
         frame2.place(x=self.win.size(root)[1] / 26, y=self.win.size(root)[0] / 4)
 
     def show_results(self, root):
-        frame3 = tk.Frame(root, bg="#2F2F40")
+        frame3 = tk.Frame(root, bg="#2F2F40", bd=4, relief="groove")
         tk.Label(frame3, text="Nombre d'itérations", font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=1, column=1, pady=(0, 10))
         tk.Label(frame3, text="Vecteur propre de la plus petite valeur propre", font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=3, column=1, pady=(0, 10))
         tk.Label(frame3, text="Plus petite valeur propre", font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=5, column=1, pady=(0, 10))
@@ -85,16 +85,21 @@ class InversedPowerWindow:
 
         frame3.place(x=self.win.size(root)[1] / 3.25, y=self.win.size(root)[0] / 26)
 
-    def display(self, root):
+    def button(self, root, func):
+        tk.Button(root, text="Change parameters", bg="#070B4E", font=("Cambria", 12), fg="white", relief="ridge", bd=4, command=func).place(x=self.win.size(root)[1] / 16, y=self.win.size(root)[0] / 1.75)
+
+    def display(self, root, func):
         root.resizable(False, False)
         can = tk.Canvas(root, width=int(self.win.size(root)[1] / 1.5), height=int(self.win.size(root)[0] / 1.5), bg="#2F2F40")
         self.win.set_window(root, height=int(self.win.size(root)[1] / 1.5),
                                width=int(self.win.size(root)[0] / 1.5),
                                anchorx=int(self.win.size(root)[1] / 2.25 - (self.win.size(root)[1] / 3.75)),
                                anchory=int(self.win.size(root)[0] / 2.25 - (self.win.size(root)[0] / 3.75)))
+        self.win.set_background(can, "./src/img/mathematics_curves3_wp.png")
         self.menu_bar.menu_bar(root)
         self.title_canvas(root, can)
         self.show_parameters(root)
         self.show_matrix(root)
         self.show_results(root)
+        self.button(root, func)
         can.pack()

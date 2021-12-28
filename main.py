@@ -13,14 +13,27 @@ class Interface:
         self.iterpow_win = ipw.IteratedPowerWindow()
         self.invpow_win = inpw.InversedPowerWindow()
 
+    def previous_win_method(self):
+        if self.main_win.combo1_value == "Puissance itérée":
+            root2.withdraw()
+            root1.deiconify()
+        elif self.main_win.combo1_value == "Puissance inverse":
+            root3.withdraw()
+            root1.deiconify()
+
+
     def display_iteratedpower_win(self):
+        global root2
+
         root2 = tk.Toplevel()
-        self.iterpow_win.display(root2)
+        self.iterpow_win.display(root2,self.previous_win_method)
         root2.mainloop()
 
     def display_inversedpower_win(self):
+        global root3
+
         root3 = tk.Toplevel()
-        self.invpow_win.display(root3)
+        self.invpow_win.display(root3, self.previous_win_method)
         root3.mainloop()
 
     def mw_butt_action(self):
@@ -96,7 +109,7 @@ class Interface:
             root1.withdraw()
             self.display_inversedpower_win()
 
-    def display(self):
+    def display_main(self):
         global root1
 
         root1 = tk.Tk()
@@ -105,4 +118,4 @@ class Interface:
 
 main = Interface()
 #main.display_iteratedpower_win()
-main.display()
+main.display_main()

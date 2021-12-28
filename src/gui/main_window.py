@@ -104,17 +104,17 @@ class MainWindow:
         temp_frame.grid(row=3, column=1)
 
     def buttons(self, root, func):
-        tk.Button(frame2, text="OK", bg="#070B4E", font=("Cambria", 12), fg="white", relief="ridge", command=self.array_button_action).grid(row=3, column=2, padx=40, pady=5)
-        tk.Button(root, text="OK", bg="#070B4E", font=("Cambria", 20), fg="white", relief="ridge", command=func).place(x=self.win.size(root)[1] / 2, y=self.win.size(root)[0] / 5.5)
+        tk.Button(frame2, text="Choose array parameters", bg="#070B4E", font=("Cambria", 12), fg="white", relief="ridge", command=self.array_button_action).grid(row=3, column=2, padx=40, pady=5)
+        tk.Button(frame2, text="RUN", bg="#070B4E", font=("Cambria", 16), fg="white", relief="ridge", command=func).grid(row=3, column=3, pady=(0, 3))
+        tk.Button(root, text="Quitter", bg="#2F2F40", font=20, fg="white", relief="ridge", bd=8, command=root.destroy).place(x=self.win.size(root)[1] / 1.75, y=self.win.size(root)[0] / 1.75)
 
     def display(self, root, func):
         root.resizable(False, False)
-        can = tk.Canvas(root, width=int(self.win.size(root)[1] / 1.5), height=int(self.win.size(root)[0] / 1.5))
+        can = tk.Canvas(root, width=int(self.win.size(root)[1] / 1.5), height=int(self.win.size(root)[0] / 1.5), bg="black")
         self.win.set_window(root, height=int(self.win.size(root)[1] / 1.5),
                                width=int(self.win.size(root)[0] / 1.5),
                                anchorx=int(self.win.size(root)[1] / 2.25 - (self.win.size(root)[1] / 3.75)),
                                anchory=int(self.win.size(root)[0] / 2.25 - (self.win.size(root)[0] / 3.75)))
-        self.win.set_background(can, "./src/img/mathematics_curves_wp.png")
         self.menu_bar.menu_bar(root)
         self.title_canvas(root, can)
         self.choice_combobox(root)
