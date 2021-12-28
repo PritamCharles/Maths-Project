@@ -6,7 +6,7 @@ class IteratedPower:
         self.A = A
         self.x = np.random.random(len(A))
         self.wkpp = None
-        self.eigval = None
+        self.heigval = None
         self.nitermax = nitermax
         self.iter = 0
         self.epsilon = epsilon
@@ -31,21 +31,21 @@ class IteratedPower:
                 if self.diff <= self.epsilon:
                     break
 
-            self.eigval = np.linalg.norm(ck)
+            self.heigval = np.linalg.norm(ck)
             k += 1
 
-        return k, self.wkpp, self.eigval, self.diff
+        return k, self.wkpp, self.heigval, self.diff
 
 
 ###
 
-A = np.array([[3, 1, 1], [1, 3, 1], [1, 1, 3]])
+"""A = np.array([[3, 1, 1], [1, 3, 1], [1, 1, 3]])
 # A = np.array([[3, 0, 1], [0, 7, 0], [1, 0, 3]])
 x = np.array([[1], [1], [1]])
 test = IteratedPower(A, nitermax=150, epsilon=10 ** (-17))
 print("k =", test.iterated_power_method()[0])
 print("approx vecteur propre =", test.iterated_power_method()[1])
 print("plus grande valeur propre =", test.iterated_power_method()[2])
-print("erreur relative =", test.iterated_power_method()[3])
+print("erreur relative =", test.iterated_power_method()[3])"""
 
 ###

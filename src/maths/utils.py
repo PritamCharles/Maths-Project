@@ -14,8 +14,8 @@ class Matrix:
 
     def int_random_matrix(self):
         mat = np.random.randint(-100, 100, (self.size, self.size))
-        return np.dot(np.transpose(mat), mat)
+        return mat
 
     def random_matrix(self):
         mat = np.random.randn(self.size, self.size)
-        return np.dot(np.transpose(mat), mat)
+        return mat

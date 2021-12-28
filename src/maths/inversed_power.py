@@ -7,12 +7,12 @@ class InversedPower:
         self.A = A
         self.x = np.random.random(len(A))
         self.wkpp = None
-        self.eigval = None
+        self.leigval = None
         self.nitermax = nitermax
         self.iter = 0
         self.epsilon = epsilon
-        self.answer = int(input(
-            "Nous utilisons les décompositions pour calculer la plus petite valeur propre.\n1 - Décomposition de Cholesky\n2 - Décomposition LU\n3 - Décomposition QR\nLaquelle chosissez vous (numéro en réponse)?"))
+        #self.answer = int(input(
+            #"Nous utilisons les décompositions pour calculer la plus petite valeur propre.\n1 - Décomposition de Cholesky\n2 - Décomposition LU\n3 - Décomposition QR\nLaquelle chosissez vous (numéro en réponse)?"))
         self.cholesky = md.Cholesky(self.A)
         self.lu = md.LU(self.A)
         self.qr = md.QR(self.A)
@@ -27,13 +27,13 @@ class InversedPower:
             else:
                 wk = self.wkpp
 
-            if self.answer == 1:
+            if self.answer == "Cholesky":
                 mat_1 = self.cholesky.decomposition()[0]
                 mat_2 = self.cholesky.decomposition()[1]
-            elif self.answer == 2:
+            elif self.answer == "LU":
                 mat_1 = self.lu.decomposition()[0]
                 mat_2 = self.lu.decomposition()[1]
-            elif self.answer == 3:
+            elif self.answer == "QR":
                 mat_1 = self.qr.decomposition()[0]
                 mat_2 = self.qr.decomposition()[1]
 
@@ -47,15 +47,15 @@ class InversedPower:
                 if self.diff <= self.epsilon:
                     break
 
-            self.eigval = 1 / np.linalg.norm(ck)
+            self.leigval = 1 / np.linalg.norm(ck)
             k += 1
 
-        return k, self.wkpp, self.eigval, self.diff
+        return k, self.wkpp, self.leigval, self.diff
 
 
 ###
 
-A = np.array([[3, 1, 1], [1, 3, 1], [1, 1, 3]])
+"""A = np.array([[3, 1, 1], [1, 3, 1], [1, 1, 3]])
 # A = np.array([[3, 0, 1], [0, 7, 0], [1, 0, 3]])
 x = np.array([[1], [1], [1]])
 test = InversedPower(A, nitermax=150, epsilon=10 ** (-17))
@@ -63,5 +63,5 @@ print("k =", test.inversed_power_method()[0])
 print("approximation vecteur propre =", test.inversed_power_method()[1])
 print("plus petite valeur propre", test.inversed_power_method()[2])
 print("difference =", test.inversed_power_method()[3])
-
+"""
 ###

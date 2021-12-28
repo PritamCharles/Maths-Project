@@ -13,7 +13,7 @@ class Window:
 
         image = ImageTk.PhotoImage(file=path)
         can.pack(fill="both", expand=True)
-        can.create_image(0, 0, image=image, anchorx="nw")
+        can.create_image(0, 0, image=image, anchor="nw")
 
     def size(self, root):
         height = root.winfo_screenheight()
