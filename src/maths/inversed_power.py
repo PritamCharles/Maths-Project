@@ -11,7 +11,8 @@ class InversedPower:
         self.nitermax = nitermax
         self.iter = 0
         self.epsilon = epsilon
-        #self.answer = int(input(
+        self.choice = None
+        #self.choice = int(input(
             #"Nous utilisons les décompositions pour calculer la plus petite valeur propre.\n1 - Décomposition de Cholesky\n2 - Décomposition LU\n3 - Décomposition QR\nLaquelle chosissez vous (numéro en réponse)?"))
         self.cholesky = md.Cholesky(self.A)
         self.lu = md.LU(self.A)
@@ -27,13 +28,13 @@ class InversedPower:
             else:
                 wk = self.wkpp
 
-            if self.answer == "Cholesky":
+            if self.choice == "Cholesky":
                 mat_1 = self.cholesky.decomposition()[0]
                 mat_2 = self.cholesky.decomposition()[1]
-            elif self.answer == "LU":
+            elif self.choice == "LU":
                 mat_1 = self.lu.decomposition()[0]
                 mat_2 = self.lu.decomposition()[1]
-            elif self.answer == "QR":
+            elif self.choice == "QR":
                 mat_1 = self.qr.decomposition()[0]
                 mat_2 = self.qr.decomposition()[1]
 

@@ -5,6 +5,13 @@ class Matrix:
     def __init__(self, size):
         self.size = size
 
+    def SDPmatrix(self, mat):
+        if np.linalg.det(mat) != 0:
+            A = np.dot(np.transpose(mat), mat)
+            return A
+        else:
+            print("La matrice n'est pas inversible.")
+
     def hilbert_matrix(self):
         mat = np.zeros((self.size, self.size))
         for i in range(1, self.size + 1):
@@ -13,9 +20,9 @@ class Matrix:
         return mat
 
     def int_random_matrix(self):
-        mat = np.random.randint(-100, 100, (self.size, self.size))
-        return mat
+        mat = np.random.randint(low=-100, high=100, size=(self.size, self.size), dtype=int)
+        return self.SDPmatrix(mat)
 
     def random_matrix(self):
         mat = np.random.randn(self.size, self.size)
-        return mat
+        return self.SDPmatrix(mat)

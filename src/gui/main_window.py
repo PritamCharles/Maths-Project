@@ -10,8 +10,8 @@ class MainWindow:
         self.menu_bar = mb.MenuBar()
         self.combo1 = None
         self.combo_invm = None
-        self.combo1_value = None
         self.combo_invm_value = None
+        self.combo1_value = None
         self.combo2_value = None
         self.combo2 = None
         self.entry1_value = None
@@ -38,6 +38,7 @@ class MainWindow:
         self.combo1 = ttk.Combobox(temp_can1, values=m_list, state=False)
         self.combo1.set("Méthode ...")
         self.combo1.config(state="readonly")
+        self.combo1.current(0)
         self.combo1.grid(row=2, column=1, pady=(0, 10))
 
         temp_can1.grid(row=1, column=1)
@@ -52,7 +53,7 @@ class MainWindow:
         tk.Label(frame2, text="Nombre d'itérations", font=("Comic Sans MS", 16), bg="#656566", fg="white").grid(row=1, column=2, padx=10)
         tk.Label(frame2, text="Epsilon", font=("Comic Sans MS", 16), bg="#656566", fg="white").grid(row=1, column=3, padx=10)
 
-        clist = ["Aléatoire","Aléatoire à coeff entiers", "Personnalisée", "Hilbert"]
+        clist = ["Personnalisée", "Aléatoire","Aléatoire à coeffs entiers", "Matrice de Hilbert"]
         self.combo2 = ttk.Combobox(frame2, values=clist)
         self.combo2.config(state="readonly")
         self.combo2.current(0)
@@ -76,26 +77,24 @@ class MainWindow:
         temp_can2 = tk.Canvas(temp_frame, bg="#656566", highlightthickness=0)
         temp_can2.delete("all")
 
-        lsrm_list = ["Cholesky", "LU", "QR"]
+        lsrm_list = ["LU", "Cholesky", "QR"]
         if self.combo1_value == "Puissance inverse":
-            tk.Label(temp_can1, text="Méthode de résolution", font=("Comic Sans MS", 12), bg="#656566", fg="white").grid(
-                row=3, column=1)
+            tk.Label(temp_can1, text="Méthode de résolution", font=("Comic Sans MS", 12), bg="#656566", fg="white").grid(row=3, column=1)
             self.combo_invm = ttk.Combobox(temp_can1, values=lsrm_list, state=False)
             self.combo_invm.set("Méth. de résolution ...")
             self.combo_invm.config(state="readonly")
+            self.combo_invm.current(0)
             self.combo_invm.grid(row=4, column=1)
 
-        if self.combo2_value == "Aléatoire":
-            tk.Label(temp_can2, text="Taille de la matrice", font=("Comic Sans MS", 16), bg="#656566", fg="white").grid(
-                row=3, column=1, padx=10)
+        if (self.combo2_value == "Aléatoire") or (self.combo2_value == "Aléatoire à coeffs entiers") or (self.combo2_value == "Matrice de Hilbert"):
+            tk.Label(temp_can2, text="Taille de la matrice", font=("Comic Sans MS", 16), bg="#656566", fg="white").grid(row=3, column=1, padx=10)
             array_size_value = tk.IntVar(temp_can2)
             array_size_value.set(3)
             self.array_size_entry = tk.Entry(temp_can2, textvariable=array_size_value)
             self.array_size_entry.grid(row=4, column=1, padx=40, pady=10)
 
         elif self.combo2_value == "Personnalisée":
-            tk.Label(temp_can2, text="Matrice", font=("Comic Sans MS", 16), bg="#656566", fg="white").grid(
-                row=3, column=1, padx=10)
+            tk.Label(temp_can2, text="Matrice", font=("Comic Sans MS", 16), bg="#656566", fg="white").grid(row=3, column=1, padx=10)
             array_values = tk.StringVar(temp_can2)
             self.array_values_entry = tk.Entry(temp_can2, textvariable=array_values)
             self.array_values_entry.insert(0, "[[3,1,1],[1,3,1],[1,1,3]]")
