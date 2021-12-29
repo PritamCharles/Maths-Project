@@ -1,10 +1,16 @@
-import src.gui.main_window as mw
-import src.gui.iterated_power_window as ipw
-import src.gui.inversed_power_window as inpw
-import src.maths.utils as u
+import src.gui.main_win as mw
+import src.gui.iterpow_win as ipw
+import src.gui.invpow_win as inpw
+import src.gui.euclidnorm_win as enw
+import src.gui.cond_win as cw
+import src.gui.qrdiag_win as qrd
+import src.maths.utils.create_matrix as cm
 import src.maths.iterated_power as ip
 import src.maths.inversed_power as inp
+import src.maths.euclidian_norm as en
+import src.maths.conditioning as c
 import tkinter as tk
+import numpy as np
 
 
 class Interface:
@@ -12,6 +18,9 @@ class Interface:
         self.main_win = mw.MainWindow()
         self.iterpow_win = ipw.IteratedPowerWindow()
         self.invpow_win = inpw.InversedPowerWindow()
+        self.euclidnorm_win = enw.EuclidianNormWindow()
+        self.qrdiag_win = qrd.QRDiagonalizationWindow()
+        self.cond_win = cw.ConditioningWindow()
 
     def previous_win_method(self):
         if self.main_win.combo1_value == "Puissance itérée":
@@ -20,21 +29,50 @@ class Interface:
         elif self.main_win.combo1_value == "Puissance inverse":
             root3.withdraw()
             root1.deiconify()
+        elif self.main_win.combo1_value == "Norme matricielle euclidienne":
+            root4.withdraw()
+            root1.deiconify()
+        elif self.main_win.combo1_value == "Conditionnement":
+            root5.withdraw()
+            root1.deiconify()
+        elif self.main_win.combo1_value == "Diagonalisation QR":
+            root5.withdraw()
+            root1.deiconify()
 
-
-    def display_iteratedpower_win(self):
+    def display_iterpow_win(self):
         global root2
 
         root2 = tk.Toplevel()
         self.iterpow_win.display(root2,self.previous_win_method)
         root2.mainloop()
 
-    def display_inversedpower_win(self):
+    def display_invpow_win(self):
         global root3
 
         root3 = tk.Toplevel()
         self.invpow_win.display(root3, self.previous_win_method)
         root3.mainloop()
+
+    def display_euclidnorm_win(self):
+        global root4
+
+        root4 = tk.Toplevel()
+        self.euclidnorm_win.display(root4, self.previous_win_method)
+        root4.mainloop()
+
+    def display_cond_win(self):
+        global root5
+
+        root5 = tk.Toplevel()
+        self.cond_win.display(root5, self.previous_win_method)
+        root5.mainloop()
+
+    def display_qrdiag_win(self):
+        global root6
+
+        root6 = tk.Toplevel()
+        self.qrdiag_win.display(root6, self.previous_win_method)
+        root5.mainloop()
 
     def mw_butt_action(self):
         global list
@@ -46,7 +84,7 @@ class Interface:
 
         if self.main_win.combo2_value == "Aléatoire":
             self.main_win.array_size_value = int(self.main_win.array_size_entry.get())
-            self.get_matrix = u.Matrix(self.main_win.array_size_value)
+            self.get_matrix = cm.Matrix(self.main_win.array_size_value)
             self.main_win.array_values_value = self.get_matrix.random_matrix()
 
         elif self.main_win.combo2_value == "Personnalisée":
@@ -55,12 +93,12 @@ class Interface:
 
         elif self.main_win.combo2_value == "Aléatoire à coeffs entiers":
             self.main_win.array_size_value = int(self.main_win.array_size_entry.get())
-            self.get_matrix = u.Matrix(self.main_win.array_size_value)
+            self.get_matrix = cm.Matrix(self.main_win.array_size_value)
             self.main_win.array_values_value = self.get_matrix.int_random_matrix()
 
         elif self.main_win.combo2_value == "Matrice de Hilbert":
             self.main_win.array_size_value = int(self.main_win.array_size_entry.get())
-            self.get_matrix = u.Matrix(self.main_win.array_size_value)
+            self.get_matrix = cm.Matrix(self.main_win.array_size_value)
             self.main_win.array_values_value = self.get_matrix.hilbert_matrix()
 
         list = [self.main_win.combo1_value, self.main_win.combo2_value, self.main_win.entry1_value, self.main_win.entry2_value, self.main_win.array_size_value, self.main_win.array_values_value]
@@ -80,7 +118,7 @@ class Interface:
             self.iterpow_win.fepsilon = fepsilon
 
             root1.withdraw()
-            self.display_iteratedpower_win()
+            self.display_iterpow_win()
 
         elif self.main_win.combo1_value == "Puissance inverse":
             self.main_win.combo_invm_value = self.main_win.combo_invm.get()
@@ -90,7 +128,6 @@ class Interface:
                 self.invpow_win.combo_invm_value = self.main_win.combo_invm_value
             elif self.main_win.combo_invm_value == "QR":
                 self.invpow_win.combo_invm_value = self.main_win.combo_invm_value
-
 
             self.inv_pow = inp.InversedPower(A=list[-1], nitermax=list[2], epsilon=list[3])
             self.invpow_win.combo2_value = list[1]
@@ -107,7 +144,47 @@ class Interface:
             self.invpow_win.fepsilon = fepsilon
 
             root1.withdraw()
-            self.display_inversedpower_win()
+            self.display_invpow_win()
+
+        if self.main_win.combo1_value == "Norme matricielle euclidienne":
+            self.euclidnorm = en.EuclidianNorm(mat=list[-1], nitermax=list[2], epsilon=list[3])
+            self.euclidnorm_win.combo2_value = list[1]
+            self.euclidnorm_win.entry1_value = list[2]
+            self.euclidnorm_win.entry2_value = list[3]
+            self.euclidnorm_win.array_size_value = list[4]
+            self.euclidnorm_win.array_value = list[-1]
+            self.euclidnorm_win.norm_iterpow = self.euclidnorm.mat_norm_iterpow()
+            self.euclidnorm_win.norm_numpy = self.euclidnorm.mat_norm_numpy(list[-1])
+            self.euclidnorm_win.relative_error = (np.abs(self.euclidnorm_win.norm_numpy - self.euclidnorm_win.norm_iterpow) / self.euclidnorm_win.norm_numpy) * 100
+
+            root1.withdraw()
+            self.display_euclidnorm_win()
+
+        if self.main_win.combo1_value == "Conditionnement":
+            self.inv_pow = inp.InversedPower(A=list[-1], nitermax=list[2], epsilon=list[3])
+            self.cond = c.Conditioning(mat=list[-1], nitermax=list[2], epsilon=list[3])
+            self.inv_pow.choice = self.main_win.combo_invm.get()
+            leigval = self.inv_pow.inversed_power_method()[2]
+            self.cond.leigval = leigval ** 2
+
+            self.cond_win.combo2_value = list[1]
+            self.cond_win.entry1_value = list[2]
+            self.cond_win.entry2_value = list[3]
+            self.cond_win.array_size_value = list[4]
+            self.cond_win.array_value = list[-1]
+
+            root1.withdraw()
+            self.display_cond_win()
+
+        if self.main_win.combo1_value == "Diagonalisation QR":
+            self.qrdiag_win.combo2_value = list[1]
+            self.qrdiag_win.entry1_value = list[2]
+            self.qrdiag_win.entry2_value = list[3]
+            self.qrdiag_win.array_size_value = list[4]
+            self.qrdiag_win.array_value = list[-1]
+
+            root1.withdraw()
+            self.display_qrdiag_win()
 
     def display_main(self):
         global root1
@@ -117,5 +194,4 @@ class Interface:
         root1.mainloop()
 
 main = Interface()
-#main.display_iteratedpower_win()
 main.display_main()

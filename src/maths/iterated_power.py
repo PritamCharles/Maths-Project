@@ -38,8 +38,8 @@ class IteratedPower:
 
 
 ###
-
-"""A = np.array([[3, 1, 1], [1, 3, 1], [1, 1, 3]])
+"""
+A = np.array([[3, 1, 1], [1, 3, 1], [1, 1, 3]])
 # A = np.array([[3, 0, 1], [0, 7, 0], [1, 0, 3]])
 x = np.array([[1], [1], [1]])
 test = IteratedPower(A, nitermax=150, epsilon=10 ** (-17))

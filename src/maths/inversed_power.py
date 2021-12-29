@@ -1,5 +1,5 @@
 import numpy as np
-import src.maths.matrix_decompositions as md
+import src.maths.utils.matrix_decompositions as md
 
 
 class InversedPower:

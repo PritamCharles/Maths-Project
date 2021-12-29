@@ -34,9 +34,8 @@ class MainWindow:
         temp_can1 = tk.Canvas(frame1, bg="#656566", highlightthickness=0)
         tk.Label(temp_can1, text="Choisissez une méthode", font=("Comic Sans MS", 16), bg="#656566", fg="white").grid(row=1, column=1)
 
-        m_list = ["Puissance itérée", "Puissance inverse"]
+        m_list = ["Puissance itérée", "Puissance inverse", "Norme matricielle euclidienne", "Conditionnement", "Diagonalisation QR"]
         self.combo1 = ttk.Combobox(temp_can1, values=m_list, state=False)
-        self.combo1.set("Méthode ...")
         self.combo1.config(state="readonly")
         self.combo1.current(0)
         self.combo1.grid(row=2, column=1, pady=(0, 10))
@@ -78,10 +77,9 @@ class MainWindow:
         temp_can2.delete("all")
 
         lsrm_list = ["LU", "Cholesky", "QR"]
-        if self.combo1_value == "Puissance inverse":
-            tk.Label(temp_can1, text="Méthode de résolution", font=("Comic Sans MS", 12), bg="#656566", fg="white").grid(row=3, column=1)
+        if self.combo1_value == "Puissance inverse" or self.combo1_value == "Conditionnement":
+            tk.Label(temp_can1, text="Méthode de résolution (invpow)", font=("Comic Sans MS", 12), bg="#656566", fg="white").grid(row=3, column=1)
             self.combo_invm = ttk.Combobox(temp_can1, values=lsrm_list, state=False)
-            self.combo_invm.set("Méth. de résolution ...")
             self.combo_invm.config(state="readonly")
             self.combo_invm.current(0)
             self.combo_invm.grid(row=4, column=1)
@@ -105,7 +103,7 @@ class MainWindow:
 
     def buttons(self, root, func):
         tk.Button(frame2, text="Choose array parameters", bg="#070B4E", font=("Cambria", 12), fg="white", relief="ridge", command=self.array_button_action).grid(row=3, column=2, padx=40, pady=5)
-        tk.Button(frame2, text="RUN", bg="#070B4E", font=("Cambria", 16), fg="white", relief="ridge", command=func).grid(row=3, column=3, pady=(0, 3))
+        tk.Button(frame2, text="Run", bg="#070B4E", font=("Cambria", 14), fg="white", relief="ridge", command=func).grid(row=3, column=3, pady=(0, 3))
         tk.Button(root, text="Quitter", bg="#2F2F40", font=20, fg="white", relief="ridge", bd=8, command=root.destroy).place(x=self.win.size(root)[1] / 1.75, y=self.win.size(root)[0] / 1.75)
 
     def display(self, root, func):

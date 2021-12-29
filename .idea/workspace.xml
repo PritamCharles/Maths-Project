@@ -2,14 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bf61bfa-e142-45ff-9512-a83b9131c740" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/gui/euclidnorm_win.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/inversed_power_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/inversed_power_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/iterated_power_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/iterated_power_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/mathematics_curves2_wp.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/mathematics_curves2_wp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/mathematics_curves3_wp.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/mathematics_curves3_wp.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/mathematics_curves_wp.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/img/mathematics_curves_wp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/euclidian_norm_win.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/inversed_power_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/invpow_win.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/iterated_power_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/iterpow_win.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/main_win.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/mathematics_curves2_wp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/mathematics_curves3_wp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/mathematics_curves4_wp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/mathematics_curves_wp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/conditioning.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/conditioning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/euclidian_norm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/euclidian_norm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/inversed_power.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/inversed_power.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/iterated_power.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/iterated_power.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/matrix_decompositions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/qr_diagonalisation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/qr_diagonalisation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/utils.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +49,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="conditioning" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="chart" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Maths-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -52,7 +62,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/maths/conditioning.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/maths/chart.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -75,6 +85,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/maths/euclidian_norm.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="iterated_power" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Maths-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/maths" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/maths/iterated_power.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -130,9 +162,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.chart" />
         <item itemvalue="Python.euclidian_norm" />
+        <item itemvalue="Python.iterated_power" />
         <item itemvalue="Python.utils" />
-        <item itemvalue="Python.conditioning" />
       </list>
     </recent_temporary>
   </component>
@@ -149,17 +182,43 @@
       <workItem from="1640681320952" duration="985000" />
       <workItem from="1640711619091" duration="1706000" />
       <workItem from="1640713688584" duration="11073000" />
-      <workItem from="1640728265500" duration="4580000" />
+      <workItem from="1640728265500" duration="4941000" />
+      <workItem from="1640768968713" duration="3565000" />
+      <workItem from="1640773649428" duration="10362000" />
+      <workItem from="1640788796568" duration="1959000" />
+      <workItem from="1640790908382" duration="394000" />
+      <workItem from="1640791350149" duration="19000" />
+      <workItem from="1640791386272" duration="467000" />
+      <workItem from="1640793901943" duration="1525000" />
+      <workItem from="1640795453951" duration="42000" />
+      <workItem from="1640795709386" duration="26000" />
+      <workItem from="1640795785921" duration="2045000" />
+      <workItem from="1640797882000" duration="919000" />
+      <workItem from="1640798849052" duration="890000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Maths_Project$euclidian_norm.coverage" NAME="euclidian_norm Coverage Results" MODIFIED="1640682285285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
-    <SUITE FILE_PATH="coverage/Maths_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1640732877972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Maths_Project$euclidian_norm.coverage" NAME="euclidian_norm Coverage Results" MODIFIED="1640794604408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
+    <SUITE FILE_PATH="coverage/Maths_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1640799710143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Maths_Project$iterated_power.coverage" NAME="iterated_power Coverage Results" MODIFIED="1640782510242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
     <SUITE FILE_PATH="coverage/Maths_Project$conditioning.coverage" NAME="conditioning Coverage Results" MODIFIED="1640644510135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
     <SUITE FILE_PATH="coverage/Maths_Project$utils.coverage" NAME="utils Coverage Results" MODIFIED="1640647182268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
+    <SUITE FILE_PATH="coverage/Maths_Project$chart.coverage" NAME="chart Coverage Results" MODIFIED="1640796351414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
   </component>
 </project>
