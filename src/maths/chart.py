@@ -33,7 +33,7 @@ class NormValues:
         return lyaxis_int
 
 values = NormValues()
-chart = cu.Chart(title="Erreur relative en fonction de la taille de la matrice pour le calcul de la norme matricielle", xlabel="Taille de la matrice", ylabel="Erreur relative (en %)", path="C:/Users/Charles K/Desktop/IPSA/Cours_TD/aero3_moi/Algèbre linéaire numérique/projet/Maths-Project/src/gui/img/norm_error_chart.png")
+chart = cu.Chart(title="Erreur relative en fonction de la taille de la matrice pour le calcul de la norme matricielle", xlabel="Taille de la matrice", ylabel="Erreur relative (en %)", path=#your own path (from source) to img file)
 listx, listy = [values.xvalues(), values.xvalues()], [values.yvalues_random(), values.yvalues_int()]
 listlabels = ["Matrices aléatoires", "Matrices à coefficients entiers"]
 chart.plot(nb_plots=2, list_xvalues=listx, list_yvalues=listy, list_labels=listlabels)
