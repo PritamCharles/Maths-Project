@@ -73,6 +73,7 @@ class CondValues:
             lyaxis_int.append(error)
         return lyaxis_int
 
+<<<<<<< HEAD
     def yvalues_hilbert(self):
         lyaxis_hilbert = []
         for i in self.xvalues():
@@ -99,3 +100,10 @@ clistx = [cond.xvalues(), cond.xvalues(), cond.xvalues()]
 clisty = [cond.yvalues_random(), cond.yvalues_int(), cond.yvalues_hilbert()]
 clistlabels = ["Matrices aléatoires", "Matrices à coefficients entiers", "Matrices de Hilbert"]
 chart.plot(nb_plots=3, list_xvalues=clistx, list_yvalues=clisty, list_labels=clistlabels)
+=======
+values = NormValues()
+chart = cu.Chart(title="Erreur relative en fonction de la taille de la matrice pour le calcul de la norme matricielle", xlabel="Taille de la matrice", ylabel="Erreur relative (en %)", path=#your own path (from source) to img file)
+listx, listy = [values.xvalues(), values.xvalues()], [values.yvalues_random(), values.yvalues_int()]
+listlabels = ["Matrices aléatoires", "Matrices à coefficients entiers"]
+chart.plot(nb_plots=2, list_xvalues=listx, list_yvalues=listy, list_labels=listlabels)
+>>>>>>> 460f8c0d6eeb112c7ab817d811eaa23e5fec3354
