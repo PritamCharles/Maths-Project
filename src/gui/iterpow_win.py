@@ -26,7 +26,7 @@ class IteratedPowerWindow:
     def show_parameters(self, root):
         frame1 = tk.Frame(root, bg="#2F2F40", bd=4, relief="groove")
 
-        tk.Label(frame1, text="Paramètres choisis:", font=("Comic Sans MS", 7), bg="#2F2F40", fg="white").grid(row=1, column=1)
+        tk.Label(frame1, text="Paramètres choisis:", font=("Comic Sans MS", 7, "underline"), bg="#2F2F40", fg="white").grid(row=1, column=1)
         tk.Label(frame1, text="Type matrice:", font=("Comic Sans MS", 7), bg="#2F2F40", fg="white").grid(row=2, column=1)
         tk.Label(frame1, text="Nb iter max:", font=("Comic Sans MS", 7), bg="#2F2F40", fg="white").grid(row=3, column=1)
         tk.Label(frame1, text="Epsilon", font=("Comic Sans MS", 7), bg="#2F2F40", fg="white").grid(row=4, column=1)
@@ -39,7 +39,7 @@ class IteratedPowerWindow:
 
     def show_matrix(self, root):
         frame2 = tk.Frame(root, bg="#2F2F40", bd=4, relief="groove")
-        tk.Label(frame2, text="Matrice d'étude", font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=1, column=1, padx=5, pady=5)
+        tk.Label(frame2, text="Matrice d'étude", font=("Comic Sans MS", 12, "underline"), bg="#2F2F40", fg="white").grid(row=1, column=1, padx=5, pady=5)
 
         if self.combo2_value == "Personnalisée":
             for i in range(len(self.array_value)):
@@ -60,24 +60,24 @@ class IteratedPowerWindow:
 
     def show_results(self, root):
        frame3 = tk.Frame(root, bg="#2F2F40",  bd=4, relief="groove")
-       tk.Label(frame3, text="Nombre d'itérations", font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=1, column=1, padx=5, pady=(0, 10))
-       tk.Label(frame3, text="Vecteur propre de la plus grande valeur propre", font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=3, column=1, padx=5, pady=(0, 10))
-       tk.Label(frame3, text="Plus grande valeur propre", font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=5, column=1, padx=5, pady=(0, 10))
-       tk.Label(frame3, text="Différence ||wk - wk-1||", font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=7, column=1, padx=5, pady=(0, 10))
+       tk.Label(frame3, text="Nombre d'itérations", font=("Comic Sans MS", 12, "underline"), bg="#2F2F40", fg="white").grid(row=1, column=1, padx=5, pady=(0, 10))
+       tk.Label(frame3, text="Approximation de la plus grande valeur propre", font=("Comic Sans MS", 12, "underline"), bg="#2F2F40", fg="white").grid(row=3, column=1, padx=5, pady=(0, 10))
+       tk.Label(frame3, text="Approximation du vecteur propre", font=("Comic Sans MS", 12, "underline"), bg="#2F2F40", fg="white").grid(row=5, column=1, padx=5, pady=(0, 10))
+       tk.Label(frame3, text="Différence ||w(k) - w(k-1)||", font=("Comic Sans MS", 12, "underline"), bg="#2F2F40", fg="white").grid(row=7, column=1, padx=5, pady=(0, 10))
 
        tk.Label(frame3, text=str(self.nbiter), font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=2, column=1, pady=(0, 40))
 
        if self.combo2_value == "Personnalisée":
-           tk.Label(frame3, text=str(self.heigvec), font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=4, column=1, pady=(0, 40))
+           tk.Label(frame3, text=str(self.heigvec), font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=6, column=1, pady=(0, 40))
 
        if (self.combo2_value == "Aléatoire") or (self.combo2_value == "Aléatoire à coeffs entiers") or (self.combo2_value == "Matrice de Hilbert"):
            if self.array_size_value <= 5:
-               tk.Label(frame3, text=str(self.heigvec), font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=4, column=1, pady=(0, 40))
+               tk.Label(frame3, text=str(self.heigvec), font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=6, column=1, pady=(0, 40))
            else:
-               tk.Label(frame3, text="(Trop grand pour être affiché)", font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=4, column=1, pady=(0, 40))
-               print("Vecteur propre de la plus grande valeur propre:", self.heigvec)
+               tk.Label(frame3, text="(Trop grand pour être affiché)", font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=6, column=1, pady=(0, 40))
+               print("Approximation du vecteur propre de la plus grande valeur propre:", self.heigvec)
 
-       tk.Label(frame3, text=str(self.heigval), font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=6, column=1, pady=(0, 40))
+       tk.Label(frame3, text=str(self.heigval), font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=4, column=1, pady=(0, 40))
        tk.Label(frame3, text=str(self.fepsilon), font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=8, column=1)
 
        frame3.place(x=self.win.size(root)[1] / 3.25, y=self.win.size(root)[0] / 26)

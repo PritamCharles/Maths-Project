@@ -14,7 +14,7 @@ class EuclidianNormWindow:
         self.array_value = None
         self.norm_iterpow = None
         self.norm_numpy = None
-        self.relative_error = None
+        self.norm_error = None
 
     def title_canvas(self, root, canvas):
         canvas.create_text(self.win.size(root)[1] / 8.5, self.win.size(root)[0] / 25,
@@ -59,7 +59,7 @@ class EuclidianNormWindow:
 
         tk.Label(frame3, text=str(self.norm_iterpow), font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=2, column=1, pady=(0, 40))
         tk.Label(frame3, text=str(self.norm_numpy), font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=4, column=1, pady=(0, 50))
-        tk.Label(frame3, text=str(round(self.relative_error, 2)) + " %", font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=6, column=1)
+        tk.Label(frame3, text=str(round(self.norm_error, 2)) + " %", font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=6, column=1)
 
         frame3.place(x=self.win.size(root)[1] / 3.25, y=self.win.size(root)[0] / 26)
 

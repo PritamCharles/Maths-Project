@@ -32,8 +32,11 @@ class EuclidianNorm:
         return np.linalg.norm(mat)
 
 
-"""#A = np.array([[3, 1, 1], [1, 3, 1], [1, 1, 3]])
-A = np.random.randint(100, size=(1000, 1000))
-norm = EuclidianNorm(A, nitermax=100, epsilon=10 ** (-16))
-print("norm with iterated power method:", norm.mat_norm_iterpow())
-print("norm with numpy:", norm.mat_norm_numpy(A))"""
+"""matrix = cm.Matrix(size=3)
+A = matrix.int_random_matrix()
+print(A)
+# A = np.array([[3, 1, 1], [1, 3, 1], [1, 1, 3]])
+# A = np.random.randint(100, size=(1000, 1000))
+#norm = EuclidianNorm(A, nitermax=100, epsilon=10 ** (-16))
+#print("norm with iterated power method:", norm.mat_norm_iterpow())
+#print("norm with numpy:", norm.mat_norm_numpy(A))"""

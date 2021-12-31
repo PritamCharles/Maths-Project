@@ -155,7 +155,7 @@ class Interface:
             self.euclidnorm_win.array_value = list[-1]
             self.euclidnorm_win.norm_iterpow = self.euclidnorm.mat_norm_iterpow()
             self.euclidnorm_win.norm_numpy = self.euclidnorm.mat_norm_numpy(list[-1])
-            self.euclidnorm_win.relative_error = (np.abs(self.euclidnorm_win.norm_numpy - self.euclidnorm_win.norm_iterpow) / self.euclidnorm_win.norm_numpy) * 100
+            self.euclidnorm_win.norm_error = (np.abs(self.euclidnorm_win.norm_numpy - self.euclidnorm_win.norm_iterpow) / self.euclidnorm_win.norm_numpy) * 100
 
             root1.withdraw()
             self.display_euclidnorm_win()
@@ -172,6 +172,9 @@ class Interface:
             self.cond_win.entry2_value = list[3]
             self.cond_win.array_size_value = list[4]
             self.cond_win.array_value = list[-1]
+            self.cond_win.cond_iter_inv = self.cond.cond_iterinv()
+            self.cond_win.cond_numpy = self.cond.cond_numpy(list[-1])
+            self.cond_win.cond_error = (np.abs(self.cond_win.cond_numpy - self.cond_win.cond_iter_inv) / self.cond_win.cond_numpy) * 100
 
             root1.withdraw()
             self.display_cond_win()

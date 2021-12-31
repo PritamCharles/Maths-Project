@@ -12,8 +12,7 @@ class InversedPower:
         self.iter = 0
         self.epsilon = epsilon
         self.choice = None
-        #self.choice = int(input(
-            #"Nous utilisons les décompositions pour calculer la plus petite valeur propre.\n1 - Décomposition de Cholesky\n2 - Décomposition LU\n3 - Décomposition QR\nLaquelle chosissez vous (numéro en réponse)?"))
+        #self.choice = "LU" #(Pour trancer les courbes)
         self.cholesky = md.Cholesky(self.A)
         self.lu = md.LU(self.A)
         self.qr = md.QR(self.A)

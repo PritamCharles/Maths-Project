@@ -1,5 +1,6 @@
 import numpy as np
-import src.maths.matrix_decompositions as md
+from sympy import *
+import src.maths.utils.matrix_decompositions as md
 
 
 class QRDiagonalisation:
@@ -16,30 +17,32 @@ class QRDiagonalisation:
     def diagonalisation_method(self):
         k = 0
         n, p = np.shape(self.A)
-        Q = self.QR.decomposition()[0]
-        R = self.QR.decomposition()[1]
+        eigval_list = []
 
         while self.iter < self.nitermax:
             self.iter += 1
+
+            Q = self.QR.decomposition()[0]
+            R = self.QR.decomposition()[1]
+
             if k == 0:
                 Ak = self.A
             else:
                 Ak = self.Akpp
 
-            self.Qk = np.linalg.matrix_power(Q, k)
-            self.Rk = np.linalg.matrix_power(R, k)
-            self.Akpp = np.dot(self.Rk, self.Qk)
+            self.Akpp = np.dot(R, Q)
 
-            for j in range(0, n):
+            """for j in range(0, n):
                 for i in range(0, n):
                     if i > j:
                         if Ak[i, j] > self.epsilon:
-                            break
-
-            print("k =", k)
-            print("Akpp =", self.Akpp, "\n")
-
+                            break"""
             k += 1
+
+        for i in range(n):
+            eigval_list.append(self.Akpp[i, i])
+
+        return k, self.Akpp, eigval_list
 
 
 ###
@@ -47,4 +50,4 @@ class QRDiagonalisation:
 A = np.array([[3, 1, 1], [1, 3, 1], [1, 1, 3]])
 # A = np.array([[3, 0, 1], [0, 7, 0], [1, 0, 3]])
 test = QRDiagonalisation(A, nitermax=100, epsilon=10 ** 20)
-test.diagonalisation_method()
+print(test.diagonalisation_method())

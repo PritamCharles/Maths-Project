@@ -3,11 +3,10 @@ import itertools
 
 
 class Chart:
-    def __init__(self, title, xlabel, ylabel, path):
+    def __init__(self, title, xlabel, ylabel):
         self.title = title
         self.xlabel = xlabel
         self.ylabel = ylabel
-        self.path= path
 
     def plot(self, nb_plots, list_xvalues, list_yvalues, list_labels):
         plt.figure(figsize=(15, 9))
@@ -19,5 +18,5 @@ class Chart:
         plt.ylabel(self.ylabel)
         plt.legend()
         plt.grid()
-        plt.savefig(self.path)
+        #plt.savefig(self.path)
         plt.show()

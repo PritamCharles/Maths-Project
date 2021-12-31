@@ -2,24 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bf61bfa-e142-45ff-9512-a83b9131c740" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui/euclidnorm_win.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/euclidian_norm_win.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/inversed_power_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/invpow_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/iterated_power_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/iterpow_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/main_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/mathematics_curves2_wp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/mathematics_curves3_wp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/mathematics_curves4_wp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/mathematics_curves_wp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/cond_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cond_win.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/euclidnorm_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/euclidnorm_win.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/img/norm_error_chart.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/img/norm_error_chart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/img/norm_error_chart_resized.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/img/norm_error_chart_resized.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/invpow_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/invpow_win.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/iterpow_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/iterpow_win.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/chart.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/chart.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/maths/conditioning.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/conditioning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/maths/euclidian_norm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/euclidian_norm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/maths/inversed_power.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/inversed_power.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/iterated_power.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/iterated_power.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/matrix_decompositions.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/maths/qr_diagonalisation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/qr_diagonalisation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/utils/charts_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/utils/charts_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/utils/create_matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/utils/create_matrix.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +68,50 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="conditioning" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Maths-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/maths" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/maths/conditioning.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="create_matrix" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Maths-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/maths/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/maths/utils/create_matrix.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="euclidian_norm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Maths-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,28 +126,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/maths/euclidian_norm.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="iterated_power" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Maths-Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/maths" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/maths/iterated_power.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -137,35 +156,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Maths-Project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/maths" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/maths/utils.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.conditioning" />
         <item itemvalue="Python.chart" />
+        <item itemvalue="Python.create_matrix" />
         <item itemvalue="Python.euclidian_norm" />
-        <item itemvalue="Python.iterated_power" />
-        <item itemvalue="Python.utils" />
       </list>
     </recent_temporary>
   </component>
@@ -195,6 +192,25 @@
       <workItem from="1640795785921" duration="2045000" />
       <workItem from="1640797882000" duration="919000" />
       <workItem from="1640798849052" duration="890000" />
+      <workItem from="1640800000551" duration="143000" />
+      <workItem from="1640802023450" duration="130000" />
+      <workItem from="1640802655314" duration="566000" />
+      <workItem from="1640805347498" duration="1058000" />
+      <workItem from="1640807084000" duration="738000" />
+      <workItem from="1640811548192" duration="281000" />
+      <workItem from="1640813707486" duration="825000" />
+      <workItem from="1640819989558" duration="448000" />
+      <workItem from="1640862456223" duration="1794000" />
+      <workItem from="1640872600982" duration="1642000" />
+      <workItem from="1640875250495" duration="231000" />
+      <workItem from="1640877444436" duration="596000" />
+      <workItem from="1640905213904" duration="3360000" />
+      <workItem from="1640969161381" duration="1106000" />
+      <workItem from="1640970305167" duration="6000" />
+      <workItem from="1640977025230" duration="18000" />
+      <workItem from="1640977388553" duration="2424000" />
+      <workItem from="1640983038220" duration="9811000" />
+      <workItem from="1640992931012" duration="1875000" />
     </task>
     <servers />
   </component>
@@ -214,11 +230,13 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Maths_Project$euclidian_norm.coverage" NAME="euclidian_norm Coverage Results" MODIFIED="1640794604408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
-    <SUITE FILE_PATH="coverage/Maths_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1640799710143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Maths_Project$euclidian_norm.coverage" NAME="euclidian_norm Coverage Results" MODIFIED="1640983356651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
+    <SUITE FILE_PATH="coverage/Maths_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1640994795489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Maths_Project$iterated_power.coverage" NAME="iterated_power Coverage Results" MODIFIED="1640782510242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
-    <SUITE FILE_PATH="coverage/Maths_Project$conditioning.coverage" NAME="conditioning Coverage Results" MODIFIED="1640644510135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
+    <SUITE FILE_PATH="coverage/Maths_Project$qr_diagonalisation.coverage" NAME="qr_diagonalisation Coverage Results" MODIFIED="1640909210508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
+    <SUITE FILE_PATH="coverage/Maths_Project$create_matrix.coverage" NAME="create_matrix Coverage Results" MODIFIED="1640984952691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths/utils" />
+    <SUITE FILE_PATH="coverage/Maths_Project$conditioning.coverage" NAME="conditioning Coverage Results" MODIFIED="1640993785749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
     <SUITE FILE_PATH="coverage/Maths_Project$utils.coverage" NAME="utils Coverage Results" MODIFIED="1640647182268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
-    <SUITE FILE_PATH="coverage/Maths_Project$chart.coverage" NAME="chart Coverage Results" MODIFIED="1640796351414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
+    <SUITE FILE_PATH="coverage/Maths_Project$chart.coverage" NAME="chart Coverage Results" MODIFIED="1640993480857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
   </component>
 </project>

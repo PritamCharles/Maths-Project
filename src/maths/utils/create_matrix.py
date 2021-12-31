@@ -20,9 +20,9 @@ class Matrix:
         return mat
 
     def int_random_matrix(self):
-        mat = np.random.randint(low=-100, high=100, size=(self.size, self.size), dtype=int)
+        mat = np.random.randint(1, 11, (self.size, self.size))
         return self.SDPmatrix(mat)
 
     def random_matrix(self):
-        mat = np.random.randn(self.size, self.size)
+        mat = np.random.randn(self.size, self.size) ** 2
         return self.SDPmatrix(mat)
