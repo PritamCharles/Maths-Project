@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bf61bfa-e142-45ff-9512-a83b9131c740" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/cond_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cond_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/euclidnorm_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/euclidnorm_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/img/norm_error_chart.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/img/norm_error_chart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/img/norm_error_chart_resized.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/img/norm_error_chart_resized.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/invpow_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/invpow_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/iterpow_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/iterpow_win.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/maths/chart.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/chart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/conditioning.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/conditioning.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/euclidian_norm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/euclidian_norm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/inversed_power.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/inversed_power.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/qr_diagonalisation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/qr_diagonalisation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/utils/charts_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/utils/charts_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/utils/create_matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/utils/create_matrix.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +196,7 @@
       <workItem from="1640977025230" duration="18000" />
       <workItem from="1640977388553" duration="2424000" />
       <workItem from="1640983038220" duration="9811000" />
-      <workItem from="1640992931012" duration="1875000" />
+      <workItem from="1640992931012" duration="2351000" />
     </task>
     <servers />
   </component>
