@@ -11,6 +11,10 @@ class QRDiagonalizationWindow:
         self.entry2_value = None
         self.array_size_value = None
         self.array_value = None
+        self.nbiter = None
+        self.Ak = None
+        self.eigvals = None
+        self.Mk = None
 
     def title_canvas(self, root, canvas):
         canvas.create_text(self.win.size(root)[1] / 13, self.win.size(root)[0] / 25,
@@ -49,7 +53,31 @@ class QRDiagonalizationWindow:
                     tk.Label(frame2, text=str(self.array_value[i]), font=("Comic Sans MS", 8), bg="#2F2F40", fg="white").grid(row=i + 2, column=1)
 
         frame2.place(x=self.win.size(root)[1] / 140, y=self.win.size(root)[0] / 4)
-        
+
+    def show_results(self, root):
+       frame3 = tk.Frame(root, bg="#2F2F40",  bd=4, relief="groove")
+       tk.Label(frame3, text="Nombre d'itérations", font=("Comic Sans MS", 12, "underline"), bg="#2F2F40", fg="white").grid(row=1, column=1, padx=5, pady=(0, 10))
+       tk.Label(frame3, text="Dernière matrice A(k) calculée", font=("Comic Sans MS", 12, "underline"), bg="#2F2F40", fg="white").grid(row=3, column=1, padx=5, pady=(0, 10))
+       tk.Label(frame3, text="Appoximation des valeurs propres", font=("Comic Sans MS", 12, "underline"), bg="#2F2F40", fg="white").grid(row=5, column=1, padx=5, pady=(0, 10))
+       tk.Label(frame3, text="Plus grand M(k)", font=("Comic Sans MS", 12, "underline"), bg="#2F2F40", fg="white").grid(row=7, column=1, padx=5, pady=(0, 10))
+
+       tk.Label(frame3, text=str(self.nbiter), font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=2, column=1, pady=(0, 40))
+
+       if self.combo2_value == "Personnalisée":
+           tk.Label(frame3, text=str(self.Ak), font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=4, column=1, pady=(0, 40))
+
+       if (self.combo2_value == "Aléatoire") or (self.combo2_value == "Aléatoire à coeffs entiers") or (self.combo2_value == "Matrice de Hilbert"):
+           if self.array_size_value <= 5:
+               tk.Label(frame3, text=str(self.Ak), font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=4, column=1, pady=(0, 40))
+           else:
+               tk.Label(frame3, text="(Trop grand pour être affiché)", font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=4, column=1, pady=(0, 40))
+               print("Approximation du vecteur propre de la plus grande valeur propre:", self.Ak)
+
+       tk.Label(frame3, text=str(self.eigvals), font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=6, column=1, pady=(0, 40))
+       tk.Label(frame3, text=str(self.Mk), font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=8, column=1)
+
+       frame3.place(x=self.win.size(root)[1] / 3.25, y=self.win.size(root)[0] / 26)
+
     def display(self, root, func):
         root.resizable(False, False)
         can = tk.Canvas(root, width=int(self.win.size(root)[1] / 1.5), height=int(self.win.size(root)[0] / 1.5), bg="black")
@@ -62,5 +90,6 @@ class QRDiagonalizationWindow:
         self.title_canvas(root, can)
         self.show_parameters(root)
         self.show_matrix(root)
+        self.show_results(root)
         self.button(root, func)
         can.pack()

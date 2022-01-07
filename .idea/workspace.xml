@@ -4,19 +4,8 @@
     <list default="true" id="7bf61bfa-e142-45ff-9512-a83b9131c740" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/cond_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/cond_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/condchart_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/condchart_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/euclidnorm_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/euclidnorm_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/img/mathematics_curves2_wp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/img/mathematics_curves3_wp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/img/mathematics_curves4_wp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/img/mathematics_curves_wp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/invpow_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/invpow_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/iterpow_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/iterpow_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/main_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/main_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/normchart_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/normchart_win.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/qrdiag_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/qrdiag_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/utils/menu_bar.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/utils/menu_bar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/maths/qr_diagonalisation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/qr_diagonalisation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +220,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Maths_Project$euclidian_norm.coverage" NAME="euclidian_norm Coverage Results" MODIFIED="1640983356651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
-    <SUITE FILE_PATH="coverage/Maths_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1641563672222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Maths_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1641564962904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Maths_Project$iterated_power.coverage" NAME="iterated_power Coverage Results" MODIFIED="1640782510242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
     <SUITE FILE_PATH="coverage/Maths_Project$qr_diagonalisation.coverage" NAME="qr_diagonalisation Coverage Results" MODIFIED="1640909210508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
     <SUITE FILE_PATH="coverage/Maths_Project$create_matrix.coverage" NAME="create_matrix Coverage Results" MODIFIED="1640984952691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths/utils" />

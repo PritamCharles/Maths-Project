@@ -3,12 +3,13 @@ import src.gui.iterpow_win as ipw
 import src.gui.invpow_win as inpw
 import src.gui.euclidnorm_win as enw
 import src.gui.cond_win as cw
-import src.gui.qrdiag_win as qrd
+import src.gui.qrdiag_win as qrdw
 import src.maths.utils.create_matrix as cm
 import src.maths.iterated_power as ip
 import src.maths.inversed_power as inp
 import src.maths.euclidian_norm as en
 import src.maths.conditioning as c
+import src.maths.qr_diagonalisation as qrd
 import tkinter as tk
 import numpy as np
 
@@ -19,7 +20,7 @@ class Interface:
         self.iterpow_win = ipw.IteratedPowerWindow()
         self.invpow_win = inpw.InversedPowerWindow()
         self.euclidnorm_win = enw.EuclidianNormWindow()
-        self.qrdiag_win = qrd.QRDiagonalizationWindow()
+        self.qrdiag_win = qrdw.QRDiagonalizationWindow()
         self.cond_win = cw.ConditioningWindow()
 
     def previous_win_method(self):
@@ -185,6 +186,14 @@ class Interface:
             self.qrdiag_win.entry2_value = list[3]
             self.qrdiag_win.array_size_value = list[4]
             self.qrdiag_win.array_value = list[-1]
+
+            A = np.array(list[-1])
+            self.qrdiag = qrd.QRDiagonalisation(A=A, nitermax=list[2], epsilon=list[3])
+            nbiter, Ak, eigvals, Mk , P = self.qrdiag.diagonalisation_method()
+            self.qrdiag_win.nbiter = nbiter
+            self.qrdiag_win.Ak = Ak
+            self.qrdiag_win.eigvals = eigvals
+            self.qrdiag_win.Mk = Mk
 
             root1.withdraw()
             self.display_qrdiag_win()
