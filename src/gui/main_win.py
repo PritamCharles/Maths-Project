@@ -24,8 +24,8 @@ class MainWindow:
         self.array_values_entry = None
 
     def title_canvas(self, root, canvas):
-        canvas.create_text(self.win.size(root)[1] / 13, self.win.size(root)[0] / 25,
-                           text="Projet d'algèbre linéaire", font=("segoe script", 10), fill="white")
+        canvas.create_text(self.win.size(root)[1] / 9, self.win.size(root)[0] / 24,
+                           text="Projet d'algèbre linéaire numérique", font=("segoe script", 10), fill="white")
 
     def choice_combobox(self, root):
         global temp_can1
@@ -113,6 +113,7 @@ class MainWindow:
                                width=int(self.win.size(root)[0] / 1.5),
                                anchorx=int(self.win.size(root)[1] / 2.25 - (self.win.size(root)[1] / 3.75)),
                                anchory=int(self.win.size(root)[0] / 2.25 - (self.win.size(root)[0] / 3.75)))
+        self.win.set_background(can, "./src/gui/img/mathematics_curves_wp.gif")
         self.menu_bar.menu_bar(root)
         self.title_canvas(root, can)
         self.choice_combobox(root)

@@ -27,6 +27,7 @@ class NormChartWindow:
                             width=int(self.win.size(root)[0] / 1.5),
                             anchorx=int(self.win.size(root)[1] / 2.25 - (self.win.size(root)[1] / 3.75)),
                             anchory=int(self.win.size(root)[0] / 2.25 - (self.win.size(root)[0] / 3.75)))
+        self.win.set_background(can, "./src/gui/img/mathematics_curves4_wp.gif")
         self.show_image(can)
         self.menu_bar.menu_bar(root)
         self.button(root, func)

@@ -36,7 +36,7 @@ class Interface:
             root5.withdraw()
             root1.deiconify()
         elif self.main_win.combo1_value == "Diagonalisation QR":
-            root5.withdraw()
+            root6.withdraw()
             root1.deiconify()
 
     def display_iterpow_win(self):
@@ -72,7 +72,7 @@ class Interface:
 
         root6 = tk.Toplevel()
         self.qrdiag_win.display(root6, self.previous_win_method)
-        root5.mainloop()
+        root6.mainloop()
 
     def mw_butt_action(self):
         global list

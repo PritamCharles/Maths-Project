@@ -92,7 +92,7 @@ class IteratedPowerWindow:
                                width=int(self.win.size(root)[0] / 1.5),
                                anchorx=int(self.win.size(root)[1] / 2.25 - (self.win.size(root)[1] / 3.75)),
                                anchory=int(self.win.size(root)[0] / 2.25 - (self.win.size(root)[0] / 3.75)))
-        self.win.set_background(can, "./src/gui/img/mathematics_curves2_wp.png")
+        self.win.set_background(can, "./src/gui/img/mathematics_curves2_wp.gif")
         self.menu_bar.menu_bar(root)
         self.title_canvas(root, can)
         self.show_parameters(root)
