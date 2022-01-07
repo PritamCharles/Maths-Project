@@ -60,10 +60,11 @@ class InversedPower:
         self.A_gap = self.A - np.dot(gamma, np.eye(len(self.A)))
 
         if np.linalg.det(self.A_gap) != 0:
-            A = np.dot(np.transpose(self.A_gap), self.A_gap)
+            self.A_gap = np.dot(np.transpose(self.A_gap), self.A_gap)
             return A
         else:
-            print("La matrice n'est pas inversible.")
+            self.A_gap = np.dot(np.transpose(self.A_gap), self.A_gap)
+            #print("La matrice n'est pas inversible.")
 
         cholesky = md.Cholesky(self.A_gap)
         lu = md.LU(self.A_gap)
@@ -87,8 +88,8 @@ class InversedPower:
                 mat_1 = qr.decomposition()[0]
                 mat_2 = qr.decomposition()[1]
 
-            y_int = np.linalg.solve(mat_1, wk)
-            ck = np.linalg.solve(mat_2, y_int)
+            y_int = mat_1 @ wk
+            ck = mat_2 @ y_int
             self.wkpp = ck / np.linalg.norm(ck)
 
             if self.wkpp is not None:
