@@ -194,6 +194,7 @@ class Interface:
             self.qrdiag_win.Ak = Ak
             self.qrdiag_win.eigvals = eigvals
             self.qrdiag_win.Mk = Mk
+            self.qrdiag_win.eigvals_np = self.qrdiag.numpy_eig(A)[0]
 
             root1.withdraw()
             self.display_qrdiag_win()

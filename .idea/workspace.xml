@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/qrdiag_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/qrdiag_win.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/maths/qr_diagonalisation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/maths/qr_diagonalisation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,6 +199,7 @@
       <workItem from="1640977388553" duration="2424000" />
       <workItem from="1640983038220" duration="9811000" />
       <workItem from="1640992931012" duration="2351000" />
+      <workItem from="1641579758786" duration="5752000" />
     </task>
     <servers />
   </component>
@@ -220,7 +220,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Maths_Project$euclidian_norm.coverage" NAME="euclidian_norm Coverage Results" MODIFIED="1640983356651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
-    <SUITE FILE_PATH="coverage/Maths_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1641564962904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Maths_Project$main.coverage" NAME="main Coverage Results" MODIFIED="1641585934643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Maths_Project$iterated_power.coverage" NAME="iterated_power Coverage Results" MODIFIED="1640782510242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
     <SUITE FILE_PATH="coverage/Maths_Project$qr_diagonalisation.coverage" NAME="qr_diagonalisation Coverage Results" MODIFIED="1640909210508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths" />
     <SUITE FILE_PATH="coverage/Maths_Project$create_matrix.coverage" NAME="create_matrix Coverage Results" MODIFIED="1640984952691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/maths/utils" />

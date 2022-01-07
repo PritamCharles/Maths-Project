@@ -1,6 +1,7 @@
 import tkinter as tk
 import src.gui.utils.window as w
 import src.gui.utils.menu_bar as mb
+from functools import partial
 
 class QRDiagonalizationWindow:
     def __init__(self):
@@ -15,6 +16,7 @@ class QRDiagonalizationWindow:
         self.Ak = None
         self.eigvals = None
         self.Mk = None
+        self.eigvals_np = None
 
     def title_canvas(self, root, canvas):
         canvas.create_text(self.win.size(root)[1] / 13, self.win.size(root)[0] / 25,
@@ -34,9 +36,6 @@ class QRDiagonalizationWindow:
 
         frame1.place(x=self.win.size(root)[1] / 140, y=self.win.size(root)[0] / 14)
 
-    def button(self, root, func):
-        tk.Button(root, text="Changer les paramètres", bg="#070B4E", font=("Cambria", 12), fg="white", relief="ridge", bd=4, command=func).place(x=self.win.size(root)[1] / 16, y=self.win.size(root)[0] / 1.75)
-
     def show_matrix(self, root):
         frame2 = tk.Frame(root, bg="#2F2F40", bd=4, relief="groove")
         tk.Label(frame2, text="Matrice d'étude", font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=1, column=1, padx=5, pady=5)
@@ -49,13 +48,24 @@ class QRDiagonalizationWindow:
             for i in range(len(self.array_value)):
                 if self.array_size_value == 3:
                     tk.Label(frame2, text=str(self.array_value[i]), font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=i + 2, column=1)
-                if (self.array_size_value >= 4) and (self.array_size_value < 6):
+                if (self.array_size_value >= 4) and (self.array_size_value < 5):
                     tk.Label(frame2, text=str(self.array_value[i]), font=("Comic Sans MS", 8), bg="#2F2F40", fg="white").grid(row=i + 2, column=1)
+
+            if self.array_size_value >= 5:
+                tk.Label(frame2, text="(Trop grande pour être affichée)", font=("Comic Sans MS", 10), bg="#2F2F40",
+                         fg="white").grid(row=2, column=1)
+                print("Matrice d'étude:", self.array_value)
 
         frame2.place(x=self.win.size(root)[1] / 140, y=self.win.size(root)[0] / 4)
 
+    def build_frame3(self, root):
+        global frame3
+        frame3 = tk.Frame(root, bg="#2F2F40", bd=4, relief="groove")
+
     def show_results(self, root):
-       frame3 = tk.Frame(root, bg="#2F2F40",  bd=4, relief="groove")
+       for widgets in frame3.winfo_children():
+           widgets.destroy()
+
        tk.Label(frame3, text="Nombre d'itérations", font=("Comic Sans MS", 12, "underline"), bg="#2F2F40", fg="white").grid(row=1, column=1, padx=5, pady=(0, 10))
        tk.Label(frame3, text="Dernière matrice A(k) calculée", font=("Comic Sans MS", 12, "underline"), bg="#2F2F40", fg="white").grid(row=3, column=1, padx=5, pady=(0, 10))
        tk.Label(frame3, text="Appoximation des valeurs propres", font=("Comic Sans MS", 12, "underline"), bg="#2F2F40", fg="white").grid(row=5, column=1, padx=5, pady=(0, 10))
@@ -67,16 +77,51 @@ class QRDiagonalizationWindow:
            tk.Label(frame3, text=str(self.Ak), font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=4, column=1, pady=(0, 40))
 
        if (self.combo2_value == "Aléatoire") or (self.combo2_value == "Aléatoire à coeffs entiers") or (self.combo2_value == "Matrice de Hilbert"):
-           if self.array_size_value <= 5:
+           if self.array_size_value < 4:
                tk.Label(frame3, text=str(self.Ak), font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=4, column=1, pady=(0, 40))
-           else:
+           elif self.array_size_value >= 4:
                tk.Label(frame3, text="(Trop grand pour être affiché)", font=("Comic Sans MS", 10), bg="#2F2F40", fg="white").grid(row=4, column=1, pady=(0, 40))
                print("Approximation du vecteur propre de la plus grande valeur propre:", self.Ak)
 
-       tk.Label(frame3, text=str(self.eigvals), font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=6, column=1, pady=(0, 40))
+       if (self.combo2_value == "Aléatoire") or (self.combo2_value == "Aléatoire à coeffs entiers") or (self.combo2_value == "Matrice de Hilbert"):
+           if self.array_size_value < 4:
+               tk.Label(frame3, text=str(self.eigvals), font=("Comic Sans MS", 9), bg="#2F2F40", fg="white").grid(row=6, column=1, pady=(0, 40))
+           elif self.array_size_value >= 4:
+               tk.Label(frame3, text="(Trop grandes pour être affichées)", font=("Comic Sans MS", 9), bg="#2F2F40", fg="white").grid(row=6, column=1, pady=(0, 40))
+               print("Approximation des valeurs propres:", self.eigvals)
+
        tk.Label(frame3, text=str(self.Mk), font=("Comic Sans MS", 12), bg="#2F2F40", fg="white").grid(row=8, column=1)
 
        frame3.place(x=self.win.size(root)[1] / 3.25, y=self.win.size(root)[0] / 26)
+
+    def show_eigvals(self, root):
+        for widgets in frame3.winfo_children():
+            widgets.destroy()
+
+        tk.Label(frame3, text="Valeurs propres - Diagonalisation QR", font=("Comic Sans MS", 12, "underline"), bg="#2F2F40", fg="white").grid(row=1, column=1, padx=5, pady=(0, 10))
+        tk.Label(frame3, text="Valeurs propres - Numpy", font=("Comic Sans MS", 12, "underline"), bg="#2F2F40", fg="white").grid(row=3, column=1, padx=5, pady=(0, 10))
+
+        tk.Label(frame3, text=str(self.eigvals), font=("Comic Sans MS", 9), bg="#2F2F40", fg="white").grid(row=2, column=1, pady=(0, 40))
+        tk.Label(frame3, text=str(self.eigvals_np), font=("Comic Sans MS", 9), bg="#2F2F40", fg="white").grid(row=4, column=1, pady=(0, 40))
+
+        if (self.combo2_value == "Aléatoire") or (self.combo2_value == "Aléatoire à coeffs entiers") or (self.combo2_value == "Matrice de Hilbert"):
+            if self.array_size_value == 3:
+                tk.Label(frame3, text=str(self.eigvals), font=("Comic Sans MS", 9), bg="#2F2F40", fg="white").grid(row=2, column=1, pady=(0, 40))
+                tk.Label(frame3, text=str(self.eigvals_np), font=("Comic Sans MS", 9), bg="#2F2F40", fg="white").grid(row=4, column=1, pady=(0, 40))
+
+            elif self.array_size_value > 3:
+                tk.Label(frame3, text="(Trop grandes pour être affichées)", font=("Comic Sans MS", 9), bg="#2F2F40", fg="white").grid(row=2, column=1, pady=(0, 40))
+                print("Approximation des valeurs propres - Diagonalisation QR:", self.eigvals)
+                tk.Label(frame3, text="(Trop grandes pour être affichées)", font=("Comic Sans MS", 9), bg="#2F2F40", fg="white").grid(row=4, column=1, pady=(0, 40))
+                print("Approximation des valeurs propres - Numpy:", self.eigvals_np)
+
+        frame3.place(x=self.win.size(root)[1] / 3, y=self.win.size(root)[0] / 6)
+
+    def button(self, root, func):
+        tk.Button(root, text="Changer les paramètres", bg="#070B4E", font=("Cambria", 12), fg="white", relief="ridge", bd=4, command=func).place(x=self.win.size(root)[1] / 16, y=self.win.size(root)[0] / 1.75)
+        tk.Button(root, text="Comparaison des valeurs propres", bg="#070B4E", font=("Cambria", 9), fg="white", relief="ridge", bd=4, command=partial(self.show_eigvals, root)).place(x=self.win.size(root)[1] / 16, y=self.win.size(root)[0] / 1.95)
+        tk.Button(root, text="Comparaison de la matrice de passage", bg="#070B4E", font=("Cambria", 9), fg="white", relief="ridge", bd=4, command=None).place(x=self.win.size(root)[1] / 16, y=self.win.size(root)[0] / 2.15)
+        tk.Button(root, text="Diagonalisation QR", bg="#070B4E", font=("Cambria", 9), fg="white", relief="ridge", bd=4, command=partial(self.show_results, root)).place(x=self.win.size(root)[1] / 4.75, y=self.win.size(root)[0] / 1.95)
 
     def display(self, root, func):
         root.resizable(False, False)
@@ -90,6 +135,7 @@ class QRDiagonalizationWindow:
         self.title_canvas(root, can)
         self.show_parameters(root)
         self.show_matrix(root)
+        self.build_frame3(root)
         self.show_results(root)
         self.button(root, func)
         can.pack()
