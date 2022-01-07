@@ -65,6 +65,6 @@ print("Dernière matrice A calculée =", qrdiag.diagonalisation_method()[1])
 print("Approximation des valeurs propres =", qrdiag.diagonalisation_method()[2])
 print("Plus grand coefficient en-dessous de la diagonale =", qrdiag.diagonalisation_method()[3])
 print("Matrice de passage P =", qrdiag.diagonalisation_method()[4])
-# print("numpy:", qrdiag.numpy_eig(A))
+print("numpy:", qrdiag.numpy_eig(A))
 
 ###
